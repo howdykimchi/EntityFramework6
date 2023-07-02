@@ -254,5 +254,15 @@ namespace EntityFramework6
                 MessageBox.Show($"{updatedStudent.Id} / {updatedStudent.Name} / {updatedStudent.Birthday}");
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            using (var context = new MyDbContext())
+            {
+                Student student = context.Students.Find(2);
+                context.Students.Remove(student);
+                context.SaveChanges();
+            }
+        }
     }
 }
