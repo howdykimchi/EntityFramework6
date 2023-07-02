@@ -236,5 +236,23 @@ namespace EntityFramework6
                 */
             }
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            using (var context = new MyDbContext())
+            {
+                //select * from student where id = 1
+                Student student = context.Students.Find(1);
+                MessageBox.Show($"{student.Id} / {student.Name} / {student.Birthday}");
+
+                //update student set birthday = '20000101' where id = 1
+                student.Birthday = "20000101";
+                context.Entry(student).State = System.Data.Entity.EntityState.Modified;
+                context.SaveChanges();
+
+                Student updatedStudent = context.Students.Find(1);
+                MessageBox.Show($"{updatedStudent.Id} / {updatedStudent.Name} / {updatedStudent.Birthday}");
+            }
+        }
     }
 }
