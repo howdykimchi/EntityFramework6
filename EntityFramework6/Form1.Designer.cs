@@ -93,6 +93,7 @@
             btnRead.TabIndex = 20;
             btnRead.Text = "Read";
             btnRead.UseVisualStyleBackColor = true;
+            btnRead.Click += btnRead_Click;
             // 
             // btnCreate
             // 
