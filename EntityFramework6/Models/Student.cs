@@ -20,8 +20,12 @@ namespace EntityFramework6.Models
         [Required]
         public string Name { get; set; } = string.Empty;
 
-        [Column("age")]
-        public int Age { get; set; }
+        //[Column("age")]
+        //public int Age { get; set; }
+        [Column("birthday")]
+        [MaxLength(8)]
+        [Required]
+        public string Birthday { get; set; } = string.Empty;
 
         [Column("class_id")]
         public int ClassId { get; set; }
