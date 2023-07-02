@@ -1,4 +1,5 @@
-﻿using EntityFramework6.Properties;
+﻿using EntityFramework6.Models;
+using EntityFramework6.Properties;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -13,5 +14,10 @@ namespace EntityFramework6.Database
         public MyDbContext() : base(Settings.Default.MyConnectionString)
         {
         }
+
+        //DbSet
+        public DbSet<School>? Schools { get; set; }
+        public DbSet<Class>? Classes { get; set; }
+        public DbSet<Student>? Students { get; set; }
     }
 }

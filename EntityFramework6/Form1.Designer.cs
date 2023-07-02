@@ -30,6 +30,7 @@
         {
             lblStatus = new Label();
             btnTestConnection = new Button();
+            btnCreateDatabase = new Button();
             SuspendLayout();
             // 
             // lblStatus
@@ -51,11 +52,22 @@
             btnTestConnection.UseVisualStyleBackColor = true;
             btnTestConnection.Click += btnTestConnection_Click;
             // 
+            // btnCreateDatabase
+            // 
+            btnCreateDatabase.Location = new Point(12, 41);
+            btnCreateDatabase.Name = "btnCreateDatabase";
+            btnCreateDatabase.Size = new Size(127, 23);
+            btnCreateDatabase.TabIndex = 11;
+            btnCreateDatabase.Text = "Create Database";
+            btnCreateDatabase.UseVisualStyleBackColor = true;
+            btnCreateDatabase.Click += btnCreateDatabase_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnCreateDatabase);
             Controls.Add(lblStatus);
             Controls.Add(btnTestConnection);
             Name = "Form1";
@@ -68,5 +80,6 @@
 
         private Label lblStatus;
         private Button btnTestConnection;
+        private Button btnCreateDatabase;
     }
 }

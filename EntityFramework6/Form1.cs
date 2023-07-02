@@ -16,5 +16,13 @@ namespace EntityFramework6
                 lblStatus.Text = context.Database.Exists().ToString();
             }
         }
+
+        private void btnCreateDatabase_Click(object sender, EventArgs e)
+        {
+            using (var context = new MyDbContext())
+            {
+                context.Database.CreateIfNotExists();
+            }
+        }
     }
 }
